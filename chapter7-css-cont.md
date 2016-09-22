@@ -533,6 +533,16 @@ Equivalent to the above.
 * **span:nth-child(-n+3)**  
 Matches if the element is one of the first three children of its parent and also a span.
 
+#### :last-child
+
+The :last-child pseudo class represents any element that is the last child element of its parent.
+
+```css
+li:last-child {
+  color: blue;
+}
+```
+
 #### :required
 The `:required` pseudo class represents any `<input>` element that has the `required` attribute set on it. This allows forms to easily indicate which fields must have valid data before the form can be submitted.
 
