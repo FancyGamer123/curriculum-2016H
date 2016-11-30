@@ -1,5 +1,5 @@
 ## XMLHttpRequest
-The moment you click a link on a web page your browser immediately fires of an ````HTTP```` request. While its waiting for the HTML from the server you might be presented with a blank screen. Nowadays, this blank screen is only visible for a couple of milliseconds. [Try](https://github.com/IT2805/curriculum/blob/master/chapter12-http.md) for yourself.
+The moment you click a link on a web page your browser immediately fires of an ````HTTP```` request. While its waiting for the HTML from the server you might be presented with a blank screen. Nowadays, this blank screen is only visible for a couple of milliseconds. [Try](https://github.com/IT2805/curriculum/blob/master/chapter12-ajax.md) for yourself.
 
 ### Ajax
 However, not all websites require the user to load the entire page when a link is clicked. In fact, you could argue that the most popular websites today are loaded dynamically with ````XMLHttpRequests````. This means that the content you see in your browser is loaded *after* the initial payload. You have probably noticed this behaviour while scrolling down your Facebook feed, or clicked on an e-mail in Gmail.

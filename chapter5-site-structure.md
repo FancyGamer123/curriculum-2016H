@@ -1,7 +1,7 @@
 ## Site structure
 
 ### URL
-Uniform Resource Locators (URL) are used to link to another document or resource. This can be a link to another web site, or to an external style sheet, script, image, submit a form, or any other resource. URLs can also be used to link to sections within the same document.  
+Uniform Resource Locators (URL) are used to link to another document or resource. This can be a link to another web site, an external style sheet, script, image, submit a form, or any other resource. URLs can also be used to link to sections within the same document.  
 
 The URL specifies the precise location of a resource on the Internet. They follow a protocol, a set of rules defining how information is exchanged between two resources, and web browsers communicate using Hypertext Transfer Protocol(HTTP). URLs for all web pages must start with the scheme "http" or "https" (secure HTTP). Other internet resources use different protocols, and have different scheme names, such as ftp.
 
@@ -39,7 +39,7 @@ Some properties to be aware of with the GET method:
 * GET requests have length restrictions because the URL has a max length
 * GET requests can be hacked, so don't send sensitive data, e.g. passwords, with GET.
 
-On the other hand, we have the POST method. POST requests are send as a separate message, and not in the URL. POST requests are never cached, do not remain in the browser's history and can not be bookmarked. POSt should be used for sensitive data such as passwords, credit card numbers and bank account numbers. There is no max length for POST, so use that in stead of GET if you are sending lots of data.
+On the other hand, we have the POST method. POST requests are send as a separate message, and not in the URL. POST requests are never cached, do not remain in the browser's history and can not be bookmarked. POST should be used for sensitive data such as passwords, credit card numbers and bank account numbers. There is no max length for POST, so use that in stead of GET if you are sending lots of data.
 
 You use GET or POST as part of a e.g. form (which you will learn about later). To use either GET or POST you specify the chosen method like this `<form method="POST" action="server_side_processing.php">` which will POST information to the program server_side_processing.php in the same directory as the current form on the server.
 

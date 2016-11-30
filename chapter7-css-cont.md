@@ -153,7 +153,9 @@ li.coming-soon {
 }
 ```
 
-TODO: INSERT IMAGE OF EXAMPLE
+You can see the results here:
+
+![Block and inline elements](images/frominlinetoblock.png)
 
 
 ### Hide boxes
@@ -187,21 +189,23 @@ li.coming-soon {
 }
 ```
 
-TODO: INSERT IMAGE OF EXAMPLE
+You can see the results here:
+
+![Block and inline elements](images/visibilityhidden.png)
 
 ### Document flow
 In addition to styling elements, CSS can manipulate how the elements flow. The flow refers to how the element follow each other in the document, and how they behave next to each other. Each element has a default rule, e.g. block elements will start on a new line, while the inline elements will continue on the same line. This behavior can be changed using the CSS properties `float`, `position` and `z-index`.
 
 If one block element sits inside another block element, then the outer element is know as the containing or parent element. It is common to group a number of elements together inside a `<div>` (or other block-level) element. E.g., you might group together all of the elements that form the header of a site (such as the logo and the main navigation). The `<div>` element that contains this group of elements is then referred to as the containing (or parent) element. An element may be nested inside several other block-level elements. The containing element is always the direct parent of that element.
 
-TODO: INSERT IMAGE OF GROUPED ELEMENTS (pg. 362)
+![Grouped elements](images/grouped_elements.png)
 
 CSS has the following position schemes that allow you to control the layout of a page: normal flow, relative positioning, and absolute positioning. You specify the positioning scheme using the `position` property. You can also float elements using the `float` property.
 
 #### Normal flow
 Every block element appears on a new line, causing each item to appear lower down on the page than the previous one. Even if you specify the width of the boxes and there is space for two elements to sit side-by-side, they will not appear next to each other. This is the default behavior (unless you tell the browser to do something else).
 
-TODO: INSERT IMAGE OF NORMAL FLOW
+![Normal flow](images/normal_flow.png)
 
 In normal flow, each block-level element sits on top of the next one. Since this is the default way in which browsers treat HTML elements, you do not need a CSS property to indicate that elements should appear in normal flow, but the syntax would be `position: static;`.
 
@@ -209,7 +213,7 @@ In the example below, the width property for the heading has not been specified,
 
 ```html
 <body>
-  <h1>Positioning</h1>
+  <h1>Normal flow</h1>
   <p>
 
   </p>
@@ -237,7 +241,7 @@ p {
 #### Relative positioning
 This moves an element from the position it will be in normal flow, shifting it to the top, right, bottom, or left of where it would have been placed. This does not affect the position of surrounding elements; they stay in the position they would be in in normal flow.
 
-TODO: INSERT IMAGE OF REALTIVE PSOTIONSNIGN
+![Relative positioning](images/relative_positioning.png)
 
 The second paragraph has been pushed down and right from where it would otherwise have been in a normal flow.
 
@@ -245,41 +249,41 @@ Relative positioning moves an element in relation to where it would have been in
 
 You then use the offset properties (`top`, `bottom`, `left` or `right`) to indicate how far to move the element from where it would have been in normal flow. To move the box up or down, you can use either the `top` or `bottom` properties. To move the box horizontally you can use either the `left` or `right` properties. The values of the box offset properties are usually given in pixels, percentages or ems.
 
+The following code is for the example given above:
+
 ```html
 <body>
-  <h1>Positioning</h1>
+  <h1>Relative positioning</h1>
+  <p class="relative">
+    Relative positioning moves (...) the value `relative`.
+  </p>
   <p>
-
+    You then use the offset (...), percentages or ems.
   </p>
 </body>
 ```
 
 ```CSS
-p.example{
+.relative{
   position: relative;
-  top: 10px;
   left: 100px;
 }
 ```
 
-TODO: IMAGE OF EXAMPLE
-
 #### Absolute positioning
 This positions the element in relation to its containing element. It is taken out of normal flow, meaning that it does not affect the position of any surrounding elements (as they simply ignore the space it would have taken up). Absolutely positioned elements move as users scroll up and down the page.
 
-TODO: INSERT IMAGE OF ABSOUTE positioning
-
-The heading is positioned to the top right, and the paragraphs start at the top of the screen (as if the heading were not there).
-
-When the `position` property is given a value of `absolute`. the box is taken out of normal flow and no longer affects the position of other elements on the page (they act like it is not there). The box offset properties (`top`, `bottom`, `left` or `right`) specify where the element should appear in relation to its containing element.
+![Relative positioning](images/absolute_positioning.png)
 
 In this example, the heading has been positioned at the top of the page and 500 pixels from its left edge. The width of the heading is set to be 250 pixels wide. The `width` property has also been applied to the `<p>` elements in this example to prevent the text from overlapping and becoming unreadable.
 
+The following code is for the example given above:
+
 ```html
 <body>
-  <h1>Positioning</h1>
+  <h1>Absolute positioning</h1>
   <p>
-
+    In this example, the heading (...) and becoming unreadable.
   </p>
 </body>
 ```
@@ -297,22 +301,25 @@ p {
 }
 ```
 
-TODO: IMAGE OF EXAMPLE
+When the `position` property is given a value of `absolute`. the box is taken out of normal flow and no longer affects the position of other elements on the page (they act like it is not there). The box offset properties (`top`, `bottom`, `left` or `right`) specify where the element should appear in relation to its containing element.
 
 #### Fixed positioning
 This is a form of absolute positioning that positions the element in relation to the browser window, as opposed to the containing element. Elements with fixed positioning do not affect the position of surrounding elements and they do not move when the user scrolls up or down the page.
 
-TODO: INSERT IMAGE OF FIXED position
+![Relative positioning](images/fixed_pos.png)
 
-The heading has been placed in the center of the page and 25% from the top of the screen (the rest appears in normal flow).
+The heading has been placed in the center of the page and 100px from the top of the screen (the rest appears in normal flow).
 
 In the example below, the heading has been positioned to the top left hand corner of the browser window. When the user scrolls down the page, the paragraphs disappear behind the heading. The `<p>` elements are in normal flow and ignore the space that the `<h1>` element would have taken up. Therefore, the `margin-top` property has been used to push the first `<p>` element below where the fixed position `<h1>` element is sitting.
 
 ```html
 <body>
-  <h1>Positioning</h1>
+  <h1>Fixed positioning</h1>
+  <p class="top">
+    This is a form (...) down the page.
+  </p>
   <p>
-
+    In the example (...) sitting.
   </p>
 </body>
 ```
@@ -328,17 +335,17 @@ h1 {
   background-color: #efefef;
 }
 
-p.example {
+.top{
   margin-top: 100px;
 }
 
 ```
-TODO: Image of example
+![Relative positioning](images/fixed_pos_example.png)
 
 #### Floating elements
 Floating an element allows you to take that element out of the normal flow and position it to the far left or right of a containing box. The floated element becomes a block-level element around which other content can flow.
 
-TOOD: INSERT IMAGE OF FLOATING elements
+![Relative positioning](images/floating_elements.png)
 
 The heading has been floated to the left, allowing the paragraph of text to flow around it.
 
@@ -348,29 +355,34 @@ In the example below, a `<blockquote>` element is used to hold a quotation. It's
 
 ```html
 <body>
-  <h1>Positioning</h1>
+  <h1>Floating elements</h1>
   <blockquote>
-
+    I'm the quotest of them all
   </blockquote>
   <p>
-
+    Floating an (...) content can flow.
+  </p>
+  <p>
+    When you use (...) normal flow).
   </p>
 </body>
 ```
 
 ```css
 blockquote {
-  float: right;
-  width: 275px;
+  float: left;
+  width: 250px;
   font-size: 130%;
   font-style: italic;
   font-family: Georgia, Times, serif;
-  margin: 0px 0px 10px 10px;
+  margin: 10px 10px 10px 10px;
   padding: 10px;
   border-top: 1px solid #665544;
   border-bottom: 1px solid #665544;
 }
 ```
+
+![Floating elements](images/floating_elements_example.png)
 
 You can use float to place elements side-by-side, if you e.g. would like a design with boxes next to each other.
 
@@ -401,7 +413,7 @@ p {
 }
 ```
 
-TODO: IMage of example
+![Floating elements](images/floating_elements_example_2.png)
 
 Setting the height of the paragraphs to be the same height as the tallest paragraph would solve this issue, but it is rarely suited to real world designs where the amount of text in a paragraph or column may vary. It is more common to use the `clear` property (discussed further down) to solve this.
 
